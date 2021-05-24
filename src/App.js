@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+import TodoApp from './TodoApp';
 import './App.css';
 
 function App() {
+  const defaultTodoList = [
+    { 
+      id: 1,
+      text: "Write in journal",
+      isChecked: false,
+    },
+    { 
+      id: 2,
+      text: "Go for a run",
+      isChecked: false,
+    },
+    { 
+      id: 3,
+      text: "Meal prep for the week",
+      isChecked: true,
+    },
+  ]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TodoApp defaultTodoList={defaultTodoList}/>
     </div>
   );
 }
