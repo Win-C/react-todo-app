@@ -3,14 +3,13 @@ import Checkbox from './Checkbox';
 /** Todo Component renders individual todos as list items
  *  
  *  Props:
- *  - 
+ *  - todo: an object like {id, text, isChecked}
+ *  - checkTodo: function passed by parent to check off todo
  * 
- *  State:
- *  - 
- * 
- *  TodoApp -> Todo -> Checkbox
+ *  TodoApp -> TodoItem -> Checkbox
  */
-function Todo({ todo, checkTodo}){
+function TodoItem({ todo, checkTodo}){
+
   function handleChange(){
     checkTodo(todo.id);
   }
@@ -23,4 +22,4 @@ function Todo({ todo, checkTodo}){
   )
 }
 
-export default Todo;
+export default TodoItem;

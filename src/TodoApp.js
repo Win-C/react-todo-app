@@ -1,16 +1,25 @@
 import {useState} from 'react';
 import { v4 as uuid} from 'uuid';
 
-import Todo from './Todo';
+import TodoItem from './TodoItem';
 import TodoForm from './TodoForm';
 
-
+/** TodoApp Component renders the TodoForm and Todos
+ * 
+ *  Props:
+ *  - defaulltTodoList is an array like [{id, text, isChecked}, ...] 
+ * 
+ *  State:
+ *  - todoList is an array like [{id, text, isChecked}, ...]
+ * 
+ *  App -> TodoApp -> {TodoForm, TodoItem}
+*/
 function TodoApp({defaultTodoList = []}){
   const [todoList, setTodoList] = useState(defaultTodoList);
 
   function createTodo(newTodo){
     setTodoList(todos => (
-      [...todos, {text: newTodo.text, id: uuid(), isChecked: false }]
+      [...todos, {id: uuid(), text: newTodo.text, isChecked: false }]
     ));
   }
 
@@ -27,7 +36,7 @@ function TodoApp({defaultTodoList = []}){
       <TodoForm createTodo={createTodo}/>
       <ul>
         {todoList.map(todo => (
-          <Todo 
+          <TodoItem 
             key={todo.id}
             todo={todo} 
             checkTodo={checkTodo}

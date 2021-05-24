@@ -1,6 +1,10 @@
 import TodoApp from './TodoApp';
 import './App.css';
 
+/** App Component
+ * 
+ *  App -> TodoApp
+ */
 function App() {
   const defaultTodoList = [
     { 

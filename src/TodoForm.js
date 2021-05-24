@@ -11,7 +11,6 @@ import Button from './Button';
  *  - formData: object of user inputs like { text: "" }
  * 
  *  TodoApp -> TodoForm -> {TextField, Button} 
- * 
 */
 function TodoForm({ createTodo }){
   const [formData, setFormData] = useState({
